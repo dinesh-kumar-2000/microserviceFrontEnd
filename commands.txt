@@ -1,0 +1,13 @@
+ng new client --no-create-application
+
+ng generate application host --no-standalone
+
+ng add @angular-architects/native-federation --project host --port 4200 --type dynamic-host
+
+ng generate application auth --no-standalone
+
+ng add @angular-architects/native-federation --project auth --port 4201 --type remote
+
+ng generate module login --project=auth --module=app
+ng generate module register --project=auth --module=app
+ng generate module forgetpassword --project=auth --module=app
